@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Signup Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, #012239, #5d2020);
+        }
+        .signup-container {
+            background: #fff;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 30%;
+            max-width: 840px;
+            margin : 10% 30%;
+            align-self: center;
+        }
+
+        .signup-container h1 {
+            margin-bottom: 40px;
+        }
+
+        .signup-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .signup-container input {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-size: 20px;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .signup-container input:focus {
+            border-color: #9b59b6;
+            outline: none;
+        }
+
+        .signup-container button {
+            padding: 10px;
+            border: none;
+            border-radius: 30px;
+            background-color: #5d2020;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 40%;
+            max-width: 400px;
+        }
+
+
+        .signup-container button:hover {
+            background-color: #9178ac;
+        }
+
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 10px;
+            border: none;
+            border-radius: 30px;
+            background-color: #e74c3c;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+
+        .back-button:hover {
+            background-color: #c0392b;
+        }
+        header {
+            background: #0f1120a4; /* Light purple */
+            color: #fc6161;
+            position : fixed; 
+            width: 100%;
+            padding: 1rem 0;
+            margin: -10px -6px;
+            display: flex;
+            z-index: 9999;
+        }
+        .container {
+            width: 80%;
+            margin-left: 10%;
+            overflow: hidden;
+        }
+        header.container{
+            width: 100vw;
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="left"><h1><i>Vid</i><sub>tube</sub></h1></div>
+        </div>
+    </header>
+    <div class="signup-container">
+        <h1>Sign Up</h1>
+        <form action="signup.php" method="post">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="phone" placeholder="Phone Number" required>
+            <button type="submit" name="signup">Sign Up</button>
+        </form>
+    </div>
+</body>
+</html>
