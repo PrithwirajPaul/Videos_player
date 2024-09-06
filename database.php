@@ -122,12 +122,12 @@ if ($conn->query($sql) === TRUE) {
 echo "Error creating table: " . $conn->error;
 }
 
-$sql = "CREATE TABLE IF NOT EXISTS comments (
-
-comment_id INT primary key ,    
-vid_id int,
-comment varchar(500),
-dat VARCHar(100)
+$sql= "CREATE TABLE IF NOT EXISTS comment_manage(
+    comment_id INT PRIMARY KEY,
+    comment_string TEXT,
+    date DATE,
+    parent INT,
+    likes INT
 )";
 
 if ($conn->query($sql) === TRUE) {
@@ -136,5 +136,33 @@ if ($conn->query($sql) === TRUE) {
 echo "Error creating table: " . $conn->error;
 }
 
+
+
+$sql= "CREATE TABLE IF NOT EXISTS comment_likes_interaction(
+    comment_id INT,
+    user_id INT,
+    T INT PRIMARY KEY AUTO_INCREMENT
+)";
+
+if ($conn->query($sql) === TRUE) {
+
+} else {
+echo "Error creating table: " . $conn->error;
+}
+
+
+$sql ="CREATE TABLE if not exists views (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NULL,
+    video_id INT NOT NULL,
+    session_id VARCHAR(255) NULL,
+    viewed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)";
+
+if ($conn->query($sql) === TRUE) {
+
+} else {
+echo "Error creating table: " . $conn->error;
+}
     
 ?>

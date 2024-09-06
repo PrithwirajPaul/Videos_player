@@ -14,7 +14,7 @@
             $vid=$_FILES["video"]["name"];
             $vidtmp=$_FILES["video"]["tmp_name"];
 
-            $validImageExtension=['jpg','jpeg','png'];
+            $validImageExtension=['jpg','jpeg','png','webp'];
             $validVidExtension=['mp4','webm','avi','flv'];
 
             $imgExtension = explode('.', $thumbnail);
@@ -47,7 +47,8 @@
                 if(mysqli_query($conn, $infoSql)){ 
                     $lastInsertedID = mysqli_insert_id($conn);
                     $CreateSql= "Insert into videos (vid_id,vid_title,vid_description,video,video_thumbnail,likes,dislikes,comments,type,views) VALUES('{$lastInsertedID}','{$_POST['title']}','{$_POST['description']}','{$newVidname}','{$newImgname}',0,0,0,'{$_POST['type']}',0)";
-                    if(mysqli_query($conn,$CreateSql)) {
+                    $updateSQL= "update channel set total_vid=total_vid+1 where ch_id='{$_SESSION['ch_id']}'";
+                    if(mysqli_query($conn,$CreateSql) && mysqli_query($conn,$updateSQL)) {
                         header('location: main.php');
                     }else{
                         echo "<script> alert('Error inserting the videos')</script>";

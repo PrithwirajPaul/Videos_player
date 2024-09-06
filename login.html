@@ -15,14 +15,13 @@
         }
         .login-container {
             background: #fff;
-            padding: 50px;
-            border-radius: 12px;
+            padding: 60px;
+            border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
-            width: 30%;
-            max-width: 840px;
-            margin : 10% 30%;
-            align-self: center;
+            width: 90%;
+            max-width: 400px;
+            margin: 150px auto;
         }
         .login-container h1 {
             margin-bottom: 20px;
@@ -35,6 +34,7 @@
             flex-direction: column;
             align-items: center;
             position: relative; 
+            margin-bottom: 10px;
         }
         .login-container input {
             margin-bottom: 20px;
@@ -58,9 +58,8 @@
             font-size: 18px;
             cursor: pointer;
             transition: background-color 0.3s;
-            
-            max-width: 200px; 
-            margin-bottom: 20px; 
+            width: 150px;
+            margin:  auto; 
         }
         .login-container button:hover {
             background-color: #9178ac;
@@ -69,12 +68,9 @@
             font-size: 15px;
             text-decoration: none;
             color: #555;
-            padding-top: 10px;
-            margin-left: 5%;
-            top: 250px; 
-            right: 20px; 
         }
         .forgot-password:hover {
+            text-decoration: underline;
             color: #333;
         }
         .signup-text {
@@ -82,6 +78,7 @@
             right: 190px;
             font-size: 18px;
             color: #555;
+            margin-top: 10px;
         }
         .signup-button {
             margin-left: 10px;
@@ -156,18 +153,15 @@
     <div class="login-container">
         <h1>Login</h1>
         <form action="login.php" method="post">
-            <input type="text" name="email" placeholder="Email" required>
+            <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
-            <div style="display: flex; margin-left: 20%;">
-                <button type="submit" name="login" style="width: 10vw;">Login</button>
-                <a href="forgot_password.php" class="forgot-password">Forgot Password?</a>
-            </div>
+            <button type="submit" name="login">Login</button>
         </form>
+        <a href="forgot_password.php" class="forgot-password">Forgot Password?</a>
         <div class="signup-text">
             Don't have an account?
-            <button class="signup-button" onclick="window.location.href='signup.html'">Sign Up</button>
         </div>
-        <div class="footer-space"></div>
+        <button class="signup-button" onclick="window.location.href='signup.html'">Sign Up</button>
     </div>
 </body>
 </html>

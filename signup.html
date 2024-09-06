@@ -20,20 +20,17 @@
             text-align: center;
             width: 30%;
             max-width: 840px;
-            margin : 10% 30%;
+            margin: 10% 30%;
             align-self: center;
         }
-
         .signup-container h1 {
             margin-bottom: 40px;
         }
-
         .signup-container form {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-
         .signup-container input {
             margin-bottom: 20px;
             padding: 20px;
@@ -43,12 +40,10 @@
             width: 80%;
             max-width: 800px;
         }
-
         .signup-container input:focus {
             border-color: #9b59b6;
             outline: none;
         }
-
         .signup-container button {
             padding: 10px;
             border: none;
@@ -61,13 +56,9 @@
             width: 40%;
             max-width: 400px;
         }
-
-
         .signup-container button:hover {
             background-color: #9178ac;
         }
-
-
         .back-button {
             position: absolute;
             top: 20px;
@@ -81,15 +72,13 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-
-
         .back-button:hover {
             background-color: #c0392b;
         }
         header {
             background: #0f1120a4; /* Light purple */
             color: #fc6161;
-            position : fixed; 
+            position: fixed;
             width: 100%;
             padding: 1rem 0;
             margin: -10px -6px;
@@ -101,12 +90,23 @@
             margin-left: 10%;
             overflow: hidden;
         }
-        header.container{
+        header.container {
             width: 100vw;
             display: flex;
             margin-bottom: 20px;
         }
-        
+        .login-link {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+        .login-link a {
+            color: #9b59b6;
+            text-decoration: none;
+        }
+        .login-link a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -124,6 +124,9 @@
             <input type="text" name="phone" placeholder="Phone Number" required>
             <button type="submit" name="signup">Sign Up</button>
         </form>
+        <div class="login-link">
+            Already have an account? <a href="login.html">Log in</a>
+        </div>
     </div>
 </body>
 </html>
